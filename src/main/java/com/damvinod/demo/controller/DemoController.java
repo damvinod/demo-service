@@ -17,8 +17,13 @@ public class DemoController {
         this.demoService = demoService;
     }
 
-    @GetMapping(path = "/v1/hello")
+    @GetMapping(path = "/hello")
     public ResponseEntity<String> helloWorld() {
         return status(HttpStatus.OK).body(demoService.getHelloResponse());
+    }
+
+    @GetMapping(path = "/v1/hello")
+    public ResponseEntity<String> helloWorldV1() {
+        return status(HttpStatus.OK).body(demoService.getHelloResponseV1());
     }
 }

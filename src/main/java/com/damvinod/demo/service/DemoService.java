@@ -1,18 +1,22 @@
 package com.damvinod.demo.service;
 
-import com.damvinod.demo.client.DockerExampleClient;
+import com.damvinod.demo.client.HelloWorldClient;
 import org.springframework.stereotype.Service;
 
 @Service
 public class DemoService {
 
-    private DockerExampleClient dockerExampleClient;
+    private HelloWorldClient helloWorldClient;
 
-    DemoService(DockerExampleClient dockerExampleClient) {
-        this.dockerExampleClient = dockerExampleClient;
+    DemoService(HelloWorldClient helloWorldClient) {
+        this.helloWorldClient = helloWorldClient;
     }
 
     public String getHelloResponse() {
-        return dockerExampleClient.getHelloResponse();
+        return helloWorldClient.getHelloResponse();
+    }
+
+    public String getHelloResponseV1() {
+        return helloWorldClient.getHelloResponseV1();
     }
 }
